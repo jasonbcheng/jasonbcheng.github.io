@@ -122,7 +122,26 @@
       border: 1px solid #d9e0e7;
       background: #f7f9fb;
     }
+    .project-video {
+  width: 100%;
+  max-height: 650px;
+  object-fit: contain;
+  display: block;
+  margin: 15px 0 25px;
+  border-radius: 8px;
+  border: 1px solid #d9e0e7;
+  background: #000;
+}
 
+.project-content ul {
+  padding-left: 22px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.project-content li {
+  margin-bottom: 8px;
+}
     .image-gallery {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -415,7 +434,88 @@
       </div>
 
     </section>
+<!-- FPGA ARCADE GAME PROJECT -->
+<section class="project">
 
+  <img
+    class="project-image"
+    src="fpga-game-preview.png"
+    alt="Arcade game running on a Basys 3 FPGA with VGA output"
+  >
+
+  <div class="project-content">
+
+    <h2>FPGA Arcade Game with Real-Time VGA Graphics</h2>
+
+    <p>
+      Designed and implemented a hardware-based arcade game in structural
+      Verilog on a Basys 3 Artix-7 FPGA. Built modular logic for VGA timing,
+      player movement, pseudo-random apple spawning, independent ripeness
+      timers, collision detection, score tracking, and lives management.
+    </p>
+
+    <p>
+      Developed a 640 × 480, 60 Hz VGA graphics pipeline that mapped game
+      state directly to RGB outputs with no software rendering. Created
+      real-time pixel logic for the player, tree, apples, borders, and ground,
+      along with timer-driven apple color changes and hardware-controlled
+      game behavior.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Verilog</span>
+      <span class="tag">FPGA</span>
+      <span class="tag">Basys 3</span>
+      <span class="tag">Artix-7</span>
+      <span class="tag">VGA Graphics</span>
+      <span class="tag">Vivado</span>
+      <span class="tag">Collision Detection</span>
+      <span class="tag">LFSR</span>
+    </div>
+
+    <h3>Hardware Demonstration</h3>
+
+    <video
+      class="project-video"
+      controls
+      poster="fpga-game-preview.png"
+    >
+      <source src="fpga-game-demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <h3>Key Features</h3>
+
+    <ul>
+      <li>
+        Generated VGA synchronization and active-video timing for a
+        640 × 480 display at 60 Hz.
+      </li>
+
+      <li>
+        Implemented real-time pixel rendering for the player, apples,
+        tree, ground, and screen boundaries.
+      </li>
+
+      <li>
+        Used an LFSR and independent hardware timers to control apple
+        positions, spawning, ripeness, and color changes.
+      </li>
+
+      <li>
+        Developed hardware collision detection for catches and misses,
+        along with score, lives, and game-over logic.
+      </li>
+
+      <li>
+        Displayed game information using the Basys 3 seven-segment
+        display and onboard LEDs.
+      </li>
+    </ul>
+
+  </div>
+
+</section>
   </main>
 
   <footer>
